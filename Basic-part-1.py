@@ -6,7 +6,7 @@
 # 1. Write a Python program to get the Python version you are using
 
 from platform import python_version
-from turtle import color
+
 
 
 python_version()
@@ -14,7 +14,7 @@ python_version()
 
 # 2. Write a Python program to display the current date and time. (default date format in python - YYYY-MM-DD)
 
-from datetime import date
+from datetime import date, datetime
 Today = date.today()
 
 print(f"today's date is: {Today}")
@@ -55,5 +55,16 @@ color_list = ["Red","Green","White" ,"Black"]
 print(color_list[0],color_list[-1])
 
 # 8. Write a Python program to display the examination schedule (extract the date from exam_st_date)
+from datetime import datetime
 exam_st_date = (11, 12, 2014)
 
+exam_st_date = str(exam_st_date) \
+    .replace("(","") \
+        .replace(")","")
+                
+exam_st_date = datetime.strptime(exam_st_date, "%d, %m, %Y").strftime('%d/%m/%Y')
+print(exam_st_date)
+
+# Solution 2
+exam_st_date = (11, 12, 2014)
+print("Exam date will start from : %i / %i / %i " %exam_st_date)
