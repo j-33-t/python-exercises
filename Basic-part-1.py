@@ -7,6 +7,11 @@
 
 from logging import raiseExceptions
 from platform import python_version
+from re import I
+from types import new_class
+from matplotlib.pyplot import eventplot
+
+from numpy import append
 
 
 
@@ -192,7 +197,7 @@ odd_even(20)
 odd_even(11)
 
 # 20. Write a Python program to count the number 4 in a given list
-n = [1,2,3,4,5,6,5,4,3,2,1,4]
+
 
 def count_4(array):
     count = 0
@@ -201,6 +206,7 @@ def count_4(array):
             count = count +1
     return count
 
+n = [1,2,3,4,5,6,5,4,3,2,1,4]
 count_4(n)
 
 # 21. Write a Python program to get a string which is n (non-negative integer) copies of a given string.
@@ -228,8 +234,7 @@ def n_2_string(string,n):
             
 n_2_string("messi", 3)
 
-# 23. Write a Python program to test whether a passed letter is a vowel or not.
-
+# 23. Write a Python program to test whether a passed letter is a vowel or not. 
 
 def vowel_check(string):
     # Converting input to string and to lowercase
@@ -260,3 +265,109 @@ def vowel_check(string):
 
 vowel_check("a")
 vowel_check(1)
+
+
+# 24. Write a Python program to check whether a specified value is contained in a group of values
+# Sample 1:  3 -> [1, 5, 8, 3] | Sample 2: -1 -> [1, 5, 8, 3]
+
+def check_n(n,list):
+    if n in list:
+        return True
+    else:
+        return False
+
+n1 = 3
+list_1 = [1, 5, 8, 3]
+
+check_n(n,list_1)
+
+n2 = -1
+list_2 = [1, 5, 8, 3]
+
+check_n(n2,list_2)
+
+
+# 25. Write a Python program to create a histogram from a given list of integers
+
+
+def histogram(list):
+    for i in list:
+        character = "+"
+        if i < 10:
+            print(f"{i*character}")
+        else:
+            print(f"{i*character}")
+
+list = [ 5,10,15,20,25]
+histogram(list)
+
+
+# 26. Write a Python program to concatenate all elements in a list into a string and return it
+
+
+def concat_elements(list):
+    new_list = ""
+    for i in list:
+        new_list = new_list + str(i)
+    return new_list
+
+concat_elements([20,4,2022])
+
+
+# 27. Write a Python program to print all even numbers from a given numbers list in the same order 
+# and stop the printing if any numbers that come after 237 in the sequence
+
+# Sample list
+
+
+def even_print(list):
+    new_list = []
+    for i in list:
+        if i%2 == 0:
+            new_list.append(i)
+    return new_list
+              
+        
+        
+numbers = [    
+    386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345, 
+    399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949, 687, 217, 
+    815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831, 445, 742, 717, 
+    958,743, 527
+    ]  
+
+even_print(numbers)
+
+
+# 28. Write a Python program to compute the greatest common divisor (GCD) of two positive integers.
+
+
+
+def factors(x,x2):
+   # Storing factors from variable x
+   factors = []
+   
+   # Storing factors from variable x2
+   factors2 = [] 
+   
+   # For loop for finding factors of x
+   for i in range(1,x+1):
+       if x % i == 0:
+           factors.append(i)
+   
+   # For loop for finding factors of x2
+   for i in range(1,x2+1):   
+       if x2 % i == 0:
+           factors2.append(i)       
+   
+   # Finding common numbers among lists i.e factors and factors2 
+   factors_set = set(factors)
+   common = factors_set.intersection(factors2)
+   GCD = list(common)
+   
+   return max(GCD)
+    
+
+# Testing    
+factors(20,28)
+factors(186,168)
