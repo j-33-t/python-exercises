@@ -12,6 +12,7 @@ from types import new_class
 from matplotlib.pyplot import eventplot
 
 from numpy import append
+from validators import Min
 
 
 
@@ -343,7 +344,7 @@ even_print(numbers)
 
 
 
-def factors(x,x2):
+def gcd(x,x2):
    # Storing factors from variable x
    factors = []
    
@@ -365,9 +366,62 @@ def factors(x,x2):
    common = factors_set.intersection(factors2)
    GCD = list(common)
    
-   return max(GCD)
+   return (f"The GCD of {x} and {x2} is: {max(GCD)}")
     
 
 # Testing    
-factors(20,28)
-factors(186,168)
+gcd(20,28)
+gcd(186,168)
+
+
+# 29. Write a Python program to sum of three given integers. However, if two values are equal sum will be zero
+
+def sum_fun(x,x1,x2):
+    if x == x1:
+        return 0
+    elif x1 == x2:
+        return 0
+    elif x == x2:
+        return 0
+    else:
+        return (x+x1+x2)
+    
+sum_fun(2,2,1)
+sum_fun(1,2,3)
+
+# 30. Write a Python program to get the least common multiple (LCM) of two positive integers.
+
+
+def lcm(x,x2):
+    x_multiples = []
+    x2_multiples = []
+    
+    if x < x2:
+        for i in range(1,x*(x2+1)):
+            if i%x == 0:
+                x_multiples.append(i)
+                
+        for i in range(1,x2*(x2+1)):
+            if i%x2 == 0:
+                x2_multiples.append(i)
+    else:
+        for i in range(1,x*(x+1)):
+            if i%x == 0:
+                x_multiples.append(i)
+                
+        for i in range(1,x2*(x+1)):
+            if i%x2 == 0:
+                x2_multiples.append(i)
+            
+    lcm = []
+    for i in x2_multiples:
+        if i in x_multiples:
+            lcm.append(i)
+    
+    
+    return min(lcm)
+             
+    
+lcm(3,13)
+
+        
