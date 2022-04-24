@@ -362,16 +362,19 @@ def gcd(x,x2):
            factors2.append(i)       
    
    # Finding common numbers among lists i.e factors and factors2 
+   ## converting list to set to use intersection function
    factors_set = set(factors)
    common = factors_set.intersection(factors2)
+   ## converting set object back to list
    GCD = list(common)
    
    return (f"The GCD of {x} and {x2} is: {max(GCD)}")
     
 
 # Testing    
-gcd(20,28)
-gcd(186,168)
+gcd(2,5)
+
+gcd(60,90)
 
 
 # 29. Write a Python program to sum of three given integers. However, if two values are equal sum will be zero
@@ -417,11 +420,11 @@ def lcm(x,x2):
     for i in x2_multiples:
         if i in x_multiples:
             lcm.append(i)
-    
-    
-    return min(lcm)
+
+    return (f"The lcm of {x} and {x2} is: {min(lcm)}")
              
     
 lcm(3,13)
+lcm(30,60)
 
         

@@ -1,6 +1,18 @@
-#############################
-# Introduction to for loops #
-#############################
+###########################
+# Control Flow Statements #
+###########################
+# """ 
+# The flow control statements are divided into three categories
+# 1. Conditional statements : [if, if-else, if-elif-else, nested if-else]
+# 2. Iterative statements : [for, while]
+# 3. Transfer statements : [break, continue, pass]
+# """
+
+
+
+#############
+# For loops #
+#############
 
 # """ 
 # For Loops
@@ -110,9 +122,44 @@ print(total)
 # -------------------------------------------------------
 
 # Example 6. Checking if number is multiple of 3
+
 total = []
-for i in range(1,20):
+for i in range(1,31):
     if i%3 == 0:
         total.append(i)
 
 print(total)
+
+# -------------------------------------------------------
+# Example 7. program to display student's marks from record
+
+student_name = 'James'
+
+marks = {'James': 90, 'Jules': 55, 'Arthur': 77}
+
+for student in marks:
+    if student == student_name:
+        print(f"{student_name} scored {marks[student]} in exam.")
+        break
+else:
+    print('No entry with that name found.')
+
+################
+# Nested loops #
+################
+
+# --------------
+
+# Example 1 print 1-5 four times
+
+for i in range(0,4):
+    for j in range(0,5):
+        print(j+1, end = " ")
+    print("")
+    
+# --------------
+
+# Example 2 : 
+import pandas as pd
+calendar = pd.DataFrame[[1,2,3],[4,5,6]]
+print(calendar)
