@@ -170,7 +170,7 @@ for i in range(-10,0,1):
     
 #-------------------------------------------------------------------------------------    
 
-# Exercise 11: Write a program to display all prime numbers with a range 1 to "n"
+# Exercise 11: Write a program to display all prime numbers with a range 2 to "n"
 
 n = 10
 for num in range(0, n+1):
