@@ -1,6 +1,7 @@
 # Exercise 1: Print First 10 natural numbers using while loop
 
 # Solution 1
+from itertools import count
 from cv2 import sumElems
 
 
@@ -142,3 +143,46 @@ for i in range(5,0,-1):
      print(j, end = " ")
     print("")
 
+#-------------------------------------------------------------------------------------    
+
+# Exercise 8: Print list in reverse order using a loop
+
+# Given:
+list1 = [10, 20, 30, 40, 50]
+
+# solution 1: 
+new_list = reversed(list1)
+
+for i in new_list:
+    print(i)
+
+#solution 2:
+start = len(list1) -1
+
+for i in range(start,-1,-1):
+    print(list1[i])
+    
+#-------------------------------------------------------------------------------------    
+# Exercise 9: Display numbers from -10 to -1 using for loop
+
+for i in range(-10,0,1):
+    print(i)
+    
+#-------------------------------------------------------------------------------------    
+
+# Exercise 11: Write a program to display all prime numbers with a range 1 to "n"
+
+n = 10
+for num in range(0, n+1):
+    if num > 1:
+        for i in range(2, num):
+            if num % i == 0:
+                break
+        else:
+            print(num)
+
+
+                
+
+                
+        
