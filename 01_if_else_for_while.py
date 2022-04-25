@@ -173,14 +173,10 @@ for i in range(-10,0,1):
 # Exercise 11: Write a program to display all prime numbers with a range 2 to "n"
 
 n = 10
-for num in range(0, n+1):
-    if num > 1:
-        for i in range(2, num):
-            if num % i == 0:
-                break
-        else:
-            print(num)
-
+result = []
+for i in range(1,10):
+    if i > 1:
+        print(i)
 
                 
 
