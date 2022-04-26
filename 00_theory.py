@@ -144,11 +144,12 @@ for student in marks:
 else:
     print('No entry with that name found.')
 
+# --------------------------------------------------------------------------------------------------
+
 ################
 # Nested loops #
 ################
 
-# --------------
 
 # Example 1 print 1-5 four times
 
@@ -157,9 +158,60 @@ for i in range(0,4):
         print(j+1, end = " ")
     print("")
     
-# --------------
 
-# Example 2 : 
-import pandas as pd
-calendar = pd.DataFrame[[1,2,3],[4,5,6]]
-print(calendar)
+# --------------------------------------------------------------------------------------------------
+
+###############
+# While loops #
+###############
+
+# With the while loop we can execute a set of statements as long as a condition is true.
+
+# Example 1: 
+
+x = 1 
+while x < 6:
+    print(x)
+    x = x + 1 # Note: remember to increment x, or else the loop will continue forever.
+
+# ------------
+
+# Example 2 : Print a message once the condition is false
+# """
+# With the else statement we can run a block of code 
+# once when the condition no longer is true:
+# """
+
+x = 1 
+while x < 6:
+    print(x)
+    x = x + 1
+else:
+    print("x is no longer less than 6")
+
+# ------------
+
+# Example 3: Continue to the next iteration if x == 3:
+# With the continue statement we can stop the current iteration, and continue with the next:
+
+x = 0
+while x < 6:
+  x += 1
+  if x == 3:
+    continue
+  print(x)
+
+
+# ------------
+
+# Example 4: Exit the loop when x == 3:
+# With the break statement we can stop the loop even if the while condition is true:
+
+x = 1
+while x < 6:
+  print(x)
+  if x == 3:
+    break
+  x += 1
+  
+  

@@ -172,13 +172,62 @@ for i in range(-10,0,1):
 
 # Exercise 11: Write a program to display all prime numbers with a range 2 to "n"
 
-n = 10
-result = []
-for i in range(1,10):
+n = 50
+prime_numbers = []
+for i in range(1,n):
     if i > 1:
-        print(i)
+        for j in range(2,i):
+            if i%j == 0:
+                break
+        else:
+            prime_numbers.append(i)
 
-                
+print(prime_numbers )
 
-                
-        
+#-------------------------------------------------------------------------------------    
+
+# Exercise 12: Display Fibonacci series up to N terms
+from math import sqrt
+
+N = 10
+result = []
+for n in range (0,N+1):
+    golden_ratio = 1.618034
+    denominator = sqrt(5) 
+    if n > 1:
+        number = ((golden_ratio)**n - (1-golden_ratio)**n)//denominator
+        result.append(round(number))
+
+print(result)
+
+
+#-------------------------------------------------------------------------------------    
+
+# Exercise 13: Find the factorial of a given number
+
+def factorial(x):
+    numbers = [*range(1,x+1)]
+    result = 1
+    for i in numbers:
+        result = result * i
+    return result
+
+factorial(5)
+
+
+#-------------------------------------------------------------------------------------
+
+# Exercise 15: Use a loop to display elements from a given list present at odd index positions, index starts from 0
+
+
+my_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100] 
+
+index = []
+for i in range(0,(len(my_list))):
+    if i%2 == 0:
+        index.append(i+1)    
+
+odd_index  = [my_list[i] for i in index]
+print(odd_index)
+
+
