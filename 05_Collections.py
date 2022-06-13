@@ -43,3 +43,26 @@ print(u1)
 
 u1.popleft()
 print(u1)
+
+
+################
+# ChainMap     #
+################
+
+# It is a dictionary like class which is able to make a single view of multiple mappings. 
+# It basically returns a list of several other dictionaries
+
+from collections import ChainMap
+a = { "club" : 'manchester united' , "country": 'England'}
+b = { "player ": 'cristiano ronaldo' , "position": 'striker'}
+c = ChainMap(a,b)
+print(c)
+
+c["club"]
+c["country"]
+
+# "to add a new dictionary in the ChainMap we use the following approach."
+
+a1 = { "season": "2021-2022" , "goals": 18}
+c = c.new_child(a1)
+print(c)
