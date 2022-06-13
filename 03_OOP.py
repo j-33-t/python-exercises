@@ -35,6 +35,8 @@ d.Name()
 d.Age()
 d.Breed()
 
+d.emoji()
+
 d1 = Dog("Demon", 8, "Siberian Husky")
 
 d1.Name()
@@ -63,5 +65,51 @@ class cat(Dog):
 Kitty = cat("Chotu", 5, "Stray")
 
 Kitty.emoji()
+
+
+# Inheritance refined + Polymorphism
+
+class animals():
+    
+    def __init__(self, name, age, species):
+        self.name = str(name)
+        self.age = int(age)
+        self.species = str(species)
+    
+    def Name(self):
+        return self.name
+    
+    def Age(self):
+        return self.age
+    
+    def species(self):
+        return self.species
+    
+class Dogs(animals):
+    
+    def bark(self):
+        print("woof woof")
+    
+    def emoji(self):
+        print("🦮")
+
+class Cats(animals):
+    
+    def meow(self):
+        print("meow meow")
+    
+    def emoji(self):
+        print("🐱")
+        
+
+kitty_cat = Cats("Chimmy",8,"Mammal")
+
+doggy_dog = Dogs("Ducchi",8,"Mammal")
+
+kitty_cat.emoji()
+kitty_cat.Name()
+
+doggy_dog.emoji()
+doggy_dog.Name()
 
 
