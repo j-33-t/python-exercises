@@ -51,4 +51,17 @@ d1.Age()
 
 
 
-# Multiple classes
+# Inheritance
+
+class cat(Dog):
+    
+    def __init__(self, name, age, breed):
+        self.name = str(name)
+        self.age = int(age)
+        self.breed = str(breed)
+        
+Kitty = cat("Chotu", 5, "Stray")
+
+Kitty.emoji()
+
+
