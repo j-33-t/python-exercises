@@ -44,6 +44,12 @@ print(u1)
 u1.popleft()
 print(u1)
 
+u1.appendleft("manchester")
+print(u1)
+
+u1.pop()
+print(u1)
+
 
 ################
 # ChainMap     #
